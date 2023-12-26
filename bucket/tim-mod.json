@@ -7,8 +7,8 @@
 		"'%UserProfile%\\Documents\\Tencent Files'.",
 		"Files produced at runtime leaves in '%AppData%\\Tencent'."
 	],
-	"url": "___",
-	"hash": "___",
+	"url": "https://github.com/GuanmingLu/ScoopBucket/releases/download/TIM/TIM.7z",
+	"hash": "4ae044baaf099e8719f9ec850eb3e948dc9e8b17a6a155d61b7987290d4c38db",
 	"shortcuts": [
 		[
 			"Bin\\QQScLauncher.exe",
@@ -17,5 +17,10 @@
 	],
 	"post_install": [
 		"Start-Process -FilePath \"$dir\\install.bat\" -Verb RunAs -Wait"
-	]
+	],
+	"uninstaller": {
+		"script": [
+			"Start-Process -FilePath \"$dir\\uninstall.bat\" -Verb RunAs -Wait"
+		]
+	}
 }
