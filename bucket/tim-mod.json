@@ -1,0 +1,21 @@
+{
+	"version": "0",
+	"description": "Modified Tencent TIM",
+	"homepage": "https://example.com/",
+	"notes": [
+		"Scoop doesn't persist your TIM data, by default they are stored in: ",
+		"'%UserProfile%\\Documents\\Tencent Files'.",
+		"Files produced at runtime leaves in '%AppData%\\Tencent'."
+	],
+	"url": "___",
+	"hash": "___",
+	"shortcuts": [
+		[
+			"Bin\\QQScLauncher.exe",
+			"TIM"
+		]
+	],
+	"post_install": [
+		"Start-Process -FilePath \"$dir\\install.bat\" -Verb RunAs -Wait"
+	]
+}
