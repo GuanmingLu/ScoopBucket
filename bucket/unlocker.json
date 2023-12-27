@@ -1,0 +1,19 @@
+{
+	"version": "0",
+	"description": "Unlocker based on IOBit Unlocker",
+	"homepage": "https://example.com/",
+	"url": "https://github.com/GuanmingLu/ScoopBucket/releases/download/Unlocker/Unlocker.7z",
+	"hash": "f8c79795acc74e534151fadb2b3fb810b486d9451b807c74ca7bfc01ee672ae3",
+	"bin": [
+		[
+			"IObitUnlocker.exe",
+			"unlocker"
+		]
+	],
+	"shortcuts": [
+		[
+			"IObitUnlocker.exe",
+			"Unlocker"
+		]
+	]
+}
