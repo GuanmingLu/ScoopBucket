@@ -1,0 +1,24 @@
+{
+	"version": "0",
+	"description": "Modified Tencent WeChat",
+	"homepage": "https://example.com/",
+	"notes": [
+		"Scoop doesn't persist your WeChat data, by default they are stored in: ",
+		"'%UserProfile%\\Documents\\WeChat Files'.",
+		"Files produced at runtime leaves in '%AppData%\\Tencent\\WeChat'."
+	],
+	"url": "https://github.com/GuanmingLu/ScoopBucket/releases/download/WeChat/WeChat.7z",
+	"hash": "ccdf1a7580728247ea6e97e778c35f672624a43e346ebed60f5121167c940a17",
+	"shortcuts": [
+		[
+			"WeChat.exe",
+			"WeChat"
+		]
+	],
+	"uninstaller": {
+		"script": [
+			"Remove-Item -Path \"$env:APPDATA\\Tencent\\WeChat\\All Users\\config\\3ebffe94.ini\" -Force | Out-Null",
+			"Remove-ItemProperty -Path \"HKCU:Software\\Tencent\\WeChat\" -Name \"FileSavePath\" -Force | Out-Null"
+		]
+	}
+}
