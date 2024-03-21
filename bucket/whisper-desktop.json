@@ -1,0 +1,12 @@
+{
+	"version": "1.12",
+	"description": "A Windows port of the whisper.cpp implementation.",
+	"homepage": "https://github.com/Const-me/Whisper/releases",
+	"url": "https://github.com/Const-me/Whisper/releases/latest/download/WhisperDesktop.zip",
+	"bin": [
+		[
+			"WhisperDesktop.exe",
+			"WhisperDesktop"
+		]
+	]
+}
