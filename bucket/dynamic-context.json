@@ -1,15 +1,19 @@
 {
-	"version": "0",
+	"version": "1",
 	"description": "An extension allows you to write C# scripts to provide context menu items in Windows Explorer.",
 	"homepage": "https://example.com/",
+	"notes": [
+		"Config path: $persist_dir\\config.json",
+		"Default plugin path: $persist_dir\\Plugins"
+	],
 	"architecture": {
 		"64bit": {
 			"url": "https://github.com/GuanmingLu/ScoopBucket/releases/download/DynamicContext/DynamicContext_x64.7z",
-			"hash": "173a10242f775762aa3ebf3cd9e924f3831c9e9645f454075902432f650f9bf5"
+			"hash": "e2297ceb290e413ffa8072d5f1baeb0e7bd0ff89e458ef924748122c829b41d5"
 		},
 		"32bit": {
 			"url": "https://github.com/GuanmingLu/ScoopBucket/releases/download/DynamicContext/DynamicContext_x86.7z",
-			"hash": "6a588a7eb0c7d43adb9f252ff4aea7feb97cb7d4b79834385f13ac55b5cd427f"
+			"hash": "6d96a2506c1efeb348520c5f769ffde5dfdc234809bf39dc50b34e126ff916b3"
 		}
 	},
 	"persist": [
