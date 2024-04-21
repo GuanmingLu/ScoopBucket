@@ -36,24 +36,24 @@
 		"}",
 		"if (!(Test-Path -Path \"$persist_dir\\Plugins\\dll\")) {",
 		"    Copy-Item -Path \"$dir\\InstallFiles\\Plugins\\dll\" -Destination \"$persist_dir\\Plugins\\dll\" -Recurse",
-		"}"
+		"}",
+		"Remove-Item -Path \"$dir\\InstallFiles\" -Recurse -Force"
 	],
 	"installer": {
-		"script": "& \"$dir\\RegAsm.exe\" \"$dir\\DynamicContext.dll\" /CodeBase"
+		"script": [
+			"& \"$dir\\RegAsm.exe\" \"$dir\\DynamicContext.dll\" /CodeBase",
+			"Stop-Process -processName: Explorer"
+		]
 	},
-	"post_install": [
-		"Remove-Item -Path \"$dir\\InstallFiles\" -Recurse -Force",
-		"Stop-Process -processName: Explorer"
-	],
 	"pre_uninstall": [
 		"if (!(is_admin)) { error \"Requires admin rights!\"; break }",
 		"$confirm = Read-Host \"Explorer will be restarted before uninstallation. Continue? (y/n)\"",
 		"if ($confirm -ne 'y') { break }"
 	],
 	"uninstaller": {
-		"script": "& \"$dir\\RegAsm.exe\" \"$dir\\DynamicContext.dll\" /CodeBase /u"
-	},
-	"post_uninstall": [
-		"Stop-Process -processName: Explorer"
-	]
+		"script": [
+			"& \"$dir\\RegAsm.exe\" \"$dir\\DynamicContext.dll\" /CodeBase /u",
+			"Stop-Process -processName: Explorer"
+		]
+	}
 }
