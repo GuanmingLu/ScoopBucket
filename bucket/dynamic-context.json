@@ -35,7 +35,7 @@
 		"}"
 	],
 	"installer": {
-		"script": "& \"$dir\\RegAsm.exe\" \"$persist_dir\\DynamicContext.dll\" /CodeBase"
+		"script": "& \"$dir\\RegAsm.exe\" \"$dir\\DynamicContext.dll\" /CodeBase"
 	},
 	"post_install": [
 		"Remove-Item -Path \"$dir\\InstallFiles\" -Recurse -Force",
@@ -47,7 +47,7 @@
 		"if ($confirm -ne 'y') { break }"
 	],
 	"uninstaller": {
-		"script": "& \"$dir\\RegAsm.exe\" \"$persist_dir\\DynamicContext.dll\" /CodeBase /u"
+		"script": "& \"$dir\\RegAsm.exe\" \"$dir\\DynamicContext.dll\" /CodeBase /u"
 	},
 	"post_uninstall": [
 		"Stop-Process -processName: Explorer"
