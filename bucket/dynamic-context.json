@@ -1,5 +1,5 @@
 {
-	"version": "2",
+	"version": "0",
 	"description": "An extension allows you to write C# scripts to provide context menu items in Windows Explorer.",
 	"homepage": "https://example.com/",
 	"architecture": {
@@ -34,9 +34,9 @@
 		"    Copy-Item -Path \"$dir\\InstallFiles\\Plugins\\dll\" -Destination \"$persist_dir\\Plugins\\dll\" -Recurse",
 		"}"
 	],
-	"installer": [
-		"& \"$dir\\RegAsm.exe\" \"$persist_dir\\DynamicContext.dll\" /CodeBase"
-	],
+	"installer": {
+		"script": "& \"$dir\\RegAsm.exe\" \"$persist_dir\\DynamicContext.dll\" /CodeBase"
+	},
 	"post_install": [
 		"Remove-Item -Path \"$dir\\InstallFiles\" -Recurse -Force",
 		"Stop-Process -processName: Explorer"
@@ -44,8 +44,12 @@
 	"pre_uninstall": [
 		"if (!(is_admin)) { error \"Requires admin rights!\"; break }",
 		"$confirm = Read-Host \"Explorer will be restarted before uninstallation. Continue? (y/n)\"",
-		"if ($confirm -ne 'y') { break }",
-		"Stop-Process -processName: Explorer",
-		"& \"$dir\\RegAsm.exe\" \"$persist_dir\\DynamicContext.dll\" /CodeBase /u"
+		"if ($confirm -ne 'y') { break }"
+	],
+	"uninstaller": {
+		"script": "& \"$dir\\RegAsm.exe\" \"$persist_dir\\DynamicContext.dll\" /CodeBase /u"
+	},
+	"post_uninstall": [
+		"Stop-Process -processName: Explorer"
 	]
 }
