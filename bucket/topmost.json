@@ -1,0 +1,21 @@
+{
+	"version": "0",
+	"description": "A utility that enables you to select windows that will always be topping other windows.",
+	"homepage": "https://example.com/",
+	"url": "https://github.com/GuanmingLu/ScoopBucket/releases/download/TopMost/TopMost.7z",
+	"hash": "7752d12c82ab405a0ab83f9bc97269df50d19665863a988e5a5f70a335b29030",
+	"architecture": {
+		"64bit": {
+			"shortcuts": [
+				"TopMost_x64.exe",
+				"TopMost"
+			]
+		},
+		"32bit": {
+			"shortcuts": [
+				"TopMost.exe",
+				"TopMost"
+			]
+		}
+	}
+}
