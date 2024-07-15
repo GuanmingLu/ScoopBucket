@@ -11,6 +11,12 @@
 					"TopMost_x64.exe",
 					"TopMost"
 				]
+			],
+			"bin": [
+				[
+					"TopMost_x64.exe",
+					"topmost"
+				]
 			]
 		},
 		"32bit": {
@@ -18,6 +24,12 @@
 				[
 					"TopMost.exe",
 					"TopMost"
+				]
+			],
+			"bin": [
+				[
+					"TopMost.exe",
+					"topmost"
 				]
 			]
 		}
