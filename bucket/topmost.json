@@ -7,14 +7,18 @@
 	"architecture": {
 		"64bit": {
 			"shortcuts": [
-				"TopMost_x64.exe",
-				"TopMost"
+				[
+					"TopMost_x64.exe",
+					"TopMost"
+				]
 			]
 		},
 		"32bit": {
 			"shortcuts": [
-				"TopMost.exe",
-				"TopMost"
+				[
+					"TopMost.exe",
+					"TopMost"
+				]
 			]
 		}
 	}
